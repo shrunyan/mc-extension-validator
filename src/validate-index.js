@@ -5,7 +5,7 @@ module.exports = (extension, callback) => {
   let errors = []
   let warnings = []
 
-  if (typeof extension === 'object') {
+  if (typeof extension !== 'object') {
     errors.push('Extension index must export an object')
 
     // return early since other tests should not run if this fails
