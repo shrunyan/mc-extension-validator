@@ -1,5 +1,7 @@
 # Mission Control Extension Validator
 
+[![Build Status](https://travis-ci.org/space-race/mc-extension-validator.svg?branch=master)](https://travis-ci.org/space-race/mc-extension-validator)
+
 This validator has two purposes
 
 1. For use as a module in [space-race/mc-core](https://github.com/space-race/mc-core) to validate extensions when loading
