@@ -51,7 +51,6 @@ function validateIndex() {
  */
 function validateStageTypes() {
   return  new Promise(resolve => {
-    console.log('b')
     // TODO: implement
     resolve()
   })
@@ -62,7 +61,6 @@ function validateStageTypes() {
  */
 function validateLogTypes() {
   return new Promise(resolve => {
-    console.log('c')
     // TODO: implement
     resolve()
   })
