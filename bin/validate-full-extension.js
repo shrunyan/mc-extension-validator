@@ -25,16 +25,26 @@ function validateIndex() {
       errorsOrWarningsFound = true
 
       if (warnings.length > 0) {
-        console.log(colors.red(warnings.length + ' warnings found for the extension index!'))
+        console.log(colors.yellow(warnings.length + ' warnings found for the extension index!\n'))
 
-        // TODO: loop through warnings and output messages
+        // loop through warnings and output messages
+        warnings.forEach(warning => {
+          console.log(colors.yellow('- Warning: ' + warning))
+        })
+
+        console.log('\n\n')
 
       }
 
       if (errors.length > 0) {
-        console.log(colors.red(errors.length + ' errors found for the extension index!'))
+        console.log(colors.red(errors.length + ' errors found for the extension index!\n'))
 
-        // TODO: loop through errors and output messages
+        // loop through errors and output messages
+        errors.forEach(error => {
+          console.log(colors.red('- Error: ' + error))
+        })
+
+        console.log('\n\n')
 
       }
 
