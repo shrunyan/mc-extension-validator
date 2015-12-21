@@ -29,17 +29,26 @@ module.exports = (extension, callback) => {
 
   }
 
+  if (typeof extension.id !== 'string') {
+    errors.push('Extension index is missing the "id" property.')
+  } else {
+    if (extension.id === '') {
+      errors.push('Extension index has an empty "id" property.')
+    }
+    if (!lowercaseAndUnderscores(extension.id)) {
+      errors.push('Extension index "id" property can only be letters or underscores.')
+    }
+
+  }
+
   if (typeof extension.name !== 'string') {
-    errors.push('Extension index is missing the "name" property.')
+    errors.push('Extension index is missing the "id" property.')
   } else {
     if (extension.name === '') {
       errors.push('Extension index has an empty "name" property.')
     }
-    if (!lowercaseAndUnderscores(extension.name)) {
-      errors.push('Extension index "name" property can only be letters or underscores.')
-    }
-
   }
+
 
   if (typeof extension.description !== 'string') {
     errors.push('Extension index is missing the "description" property.')
@@ -54,6 +63,7 @@ module.exports = (extension, callback) => {
 
   let keyWhitelist = [
     'vendor',
+    'id',
     'name',
     'description',
     'stages',
